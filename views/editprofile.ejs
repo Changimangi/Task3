@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="editprofile.css">
+    <title>Edit your profile</title>
+</head>
+<body>
+    <p>Add something about yourself.....</p>
+    <form action="/editprofile" method="POST" enctype="multipart/form-data">
+        <textarea name="addabout" id="addabout" cols="30" rows="10" placeholder="Let us know more about you "></textarea><br>
+        <input type="text" name="dept" id="dept" placeholder="Department"><br>
+        <input type="text" name="hostel" id="hostel" placeholder="Hostel name"><br>
+        <input type="text" name="location" id="location" placeholder="location">
+        Upload your profile photo here: <input type="file" name="uploadedfile" id="uploadedfile"><br>
+        <button type="submit" id="post">Submit</button>
+        
+    </form>
+    <button id="gotowelcome">Home</button>
+    
+
+
+
+    <script>
+        document.getElementById("gotowelcome").addEventListener("click",function(e){
+            e.preventDefault();
+            location.href = "http://localhost:1270/welcome";
+        })
+    </script>
+</body>
+</html>

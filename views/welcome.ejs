@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon">
+    <link rel="stylesheet" href="welcome.css">
+    <title>welcome</title>
+</head>
+<body>
+    <div id="topmost">
+    <p> <%=name%> </p> 
+    <img src="<%=dp%>" >
+</div>
+    
+    <div id="taskbar">
+    <form action="/welcome" method="POST">
+        <input type="text" name="search" id="search" placeholder="search for contacts">
+        <button type="submit" id="searchbutton">search</button>
+    </form>
+    <div id="buttons">
+    <button id="profile">Profile</button>
+    <button id="editprofile">Edit profile</button>
+    <button id="logout">Log out</button>
+    
+</div>
+</div>
+
+<p class="font-effect-neon" >Welcome to Digital Slam Book </p>
+
+    
+
+    
+
+    <script>
+        document.getElementById("logout").addEventListener("click",function(){
+            location.href = "http://localhost:1270/login";
+        })
+        document.getElementById("profile").addEventListener("click",function(){
+            location.href = "http://localhost:1270/myprofile";
+        })
+        document.getElementById("editprofile").addEventListener("click",function(){
+            location.href = "http://localhost:1270/editprofile";
+        })
+    </script>
+</body>
+</html>

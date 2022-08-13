@@ -1,0 +1,68 @@
+html{
+    background-image: url("background10.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+#filterbar{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#dropcontent1,#dropcontent2,#dropcontent3{
+    display:none;
+}
+#drop1,#drop2,#drop3{
+    position:relative;
+    padding: 10px;
+    cursor: pointer;
+}
+#drop1:hover #dropcontent1,#drop2:hover #dropcontent2,#drop3:hover #dropcontent3{
+    display: block;
+    position:absolute;
+    z-index:1;
+}
+.resultbutton{
+    width: 50%;
+    text-align: left;
+    height: 6vh;
+    background-color: rgb(15, 24, 199);
+    border: 3px solid white;
+    box-shadow: 0 0 3px black;
+    margin: 10px;
+    color: white;
+}
+.resultbutton:hover{
+    background-color: rgb(99, 122, 227);
+    cursor: pointer;
+    color: black;
+}
+#deptsearch,#locationsearch,#hostelsearch{
+    border:1px solid ;
+    padding: 10px;
+    background-color: olivedrab;
+}
+.filterdept,.filterlocation,.filterhostel{
+    width: 14vw;
+    height: 4vh;
+    background-color:orangered;
+    color:white;
+}
+#filterbar p{
+    font-size: 3vmin;
+    border: 0.5px solid none;
+    border-right: 0.5px solid white;
+    padding: 5px;
+    padding-right: 5px;
+}
+@media only screen and (max-width: 850px){
+    .filterdept,.filterlocation,.filterhostel{
+        width: fit-content;
+    }
+}

@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="searchresults.css">
+    <title>search results</title>
+</head>
+<body>
+    <form action="/searchresults" method="POST">
+        <div id="filterbar">
+        <p>Filter by: </p>
+    <div id="drop1">
+        <p id="deptsearch">Department</p>
+        <div id="dropcontent1">
+            <% data.dept.forEach(function(item){%>
+            <button type="submit" name="filterdept" class="filterdept" value="<%=item.dept%>"><%=item.dept%></button>
+            <%}); %>
+        </div>
+    </div>
+    <div id="drop2">
+        <p id="locationsearch">Location</p>
+        <div id="dropcontent2">
+            <% data.location.forEach(function(item){%>
+                <button type="submit" name="filterlocation" class="filterlocation" value="<%=item.location%>"><%=item.location%></button>
+                <%}); %>
+        </div>
+    </div>
+    <div id="drop3">
+        <p id="hostelsearch">Hostel</p>
+        <div id="dropcontent3">
+            <% data.hostel.forEach(function(item){%>
+                <button type="submit" name="filterhostel" class="filterhostel" value="<%=item.hostelname%>"><%=item.hostelname%></button>
+                <%}); %>
+        </div>
+    </div>
+</div>
+        <% data.results.forEach(function(item){%>
+        <button type="submit" name="buttonpressed" class="resultbutton" value="<%=item.username%>" ><%=item.username%></button>
+        <%}); %>
+    </form>
+
+    <script>
+        
+        
+    </script>
+</body>
+</html>

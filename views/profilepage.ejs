@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profilepage.css">
+    <title>Profile page</title>
+</head>
+<body>
+    <p id="heading"><%=profiledetails.name%></p>
+    <div id="overall">
+        <div id="imageanddetails">
+            <img src="<%=profiledetails.dp%>" >
+        <div id="details">
+            <p><%=profiledetails.about%></p>
+            <p>Name: <%=profiledetails.name%></p>
+            <p>Department: <%=profiledetails.dept%></p>
+            <div id="contact">
+            <p>Contact details: </p>
+            <p>Email id: <%=profiledetails.emailid%></p>
+            <p>Phone number: <%=profiledetails.phoneno%></p>
+        </div>
+        </div>
+        </div>
+
+    <div id="forcomment">
+    <div id="commentsonprofile">
+            <% profiledetails.comments.forEach((values) => {%>
+                <div id="onemore">
+                <form action="/profilepage" id="fordeleting" method="POST">
+                    <button type="submit" name="deletebutton" value="<%=values[1]%>" class="delete">X</button>
+                </form>
+            <div class="chat">
+            <li> <%=values[0]%> :</li>
+            <li> <%=values[1]%> </li>
+        </div>
+    </div>
+            <%}); %>
+    </div>
+    <form action="/profilepage" method="POST">
+        <input type="text" name="commentbar" id="commentbar" placeholder="Type your comment here">
+        <button type="submit" id="commentsubmit">send</button>
+    </form>
+</div>
+</div>
+
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myprofile.css">
+    <title>My profile</title>
+</head>
+<body>
+    <p id="heading"><%=myprofiledetails.name%></p>
+    <div id="overall">
+        <div id="imageanddetails">
+            <img src="<%=myprofiledetails.dp%>" >
+        <div id="details">
+        <p><%=myprofiledetails.about%></p>
+        <p>Department: <%=myprofiledetails.dept%></p>
+        <div id="contact">
+        <p>Contact details: </p>
+        <p>Email id: <%=myprofiledetails.emailid%></p>
+        <p>Phone number: <%=myprofiledetails.phoneno%></p>
+    </div>
+    
+</div>
+    </div>
+    <div id="commentsonprofile">
+            <% myprofiledetails.comments.forEach((values) => {%>
+            <div class="chat">
+            <li> <%=values[0]%> :</li>
+            <li> <%=values[1]%> </li>
+        </div>
+            <%}); %>
+    </div>
+</div>
+    
+</body>
+</html>

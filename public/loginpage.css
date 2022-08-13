@@ -1,0 +1,90 @@
+html{
+    background-image: url("background2.jpg");
+    background-size: 100% 100% ;
+    background-repeat: no-repeat;
+}
+
+#mainflex{
+    margin-top: 15%;
+    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    background-image: url("background3.jpg");
+    background-size: 35vw 50vh;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 35vw;
+    align-items: center;
+    box-shadow: 0 0 9px black;
+    border-radius: 10px;
+}
+
+p{
+    font-family:  sans-serif;
+    font-size: 4vmin;
+}
+
+#enclosure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    width: 20vw;
+    
+}
+img{
+    height: 2vh;
+    width: 1vw;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name, #password{
+    width: 15vw;
+    height: 5vh;
+}
+
+#login,#dauth{
+    background-color: greenyellow;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding:10px;
+}
+
+#login:hover,#dauth:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
+a{
+    padding: 15px;
+}
+
+
+@media only screen and (max-width: 1000px){
+    #login,#dauth,#name,#password{
+        width: 100%;
+    }
+
+    a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #enclosure,form{
+        width:100%;
+    }
+    #mainflex{
+        background-image: none;
+        box-shadow: 0 0 0;
+        width:100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20%;
+        margin-left: 0%;
+    }
+}

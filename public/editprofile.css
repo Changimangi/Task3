@@ -1,0 +1,51 @@
+html{
+    background-image: url("background10.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+p{
+    font-size: 5vmin;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#addabout{
+    width: 30vw;
+    height: 40vh;
+}
+#post,#gotowelcome{
+    height: 6vh;
+    background-color: rgb(15, 24, 199);
+    border: 1px solid rgb(15, 24, 199);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 3px black;
+}
+#post:hover,#gotowelcome:hover{
+    background-color: rgb(99, 122, 227);
+    cursor: pointer;
+    color: black;
+}
+#gotowelcome{
+    margin-left:48%;
+}
+input{
+    margin: 10px;
+    height: 6vh;
+    width: 20vw;
+}
+@media only screen and (max-width: 850px){
+    input,#addabout,#post,#gotowelcome{
+        width: 100%;
+    }
+    #gotowelcome{
+        margin-left: 0%;
+    }
+}
