@@ -98,7 +98,7 @@ app.get("/otpforgotpwd",function(req,res){
         }
         else{
             console.log("message sent");
-            console.log(info);
+
         }
     })
     
@@ -215,8 +215,6 @@ function postrequest(){
         if(err){
             return console.log(err);
         }
-        console.log(res.id_token);
-        console.log(res.access_token);
     })
 }
 app.get("/welcome",function(req,res){
@@ -224,8 +222,6 @@ app.get("/welcome",function(req,res){
     state1 = req.query.state;
     authcode = req.query.code;
     
-    console.log(req.query.code);
-    console.log(req.query.state);
     return new Promise(function(resolve,reject){ 
         xhttp.open("POST","https://auth.delta.nitt.edu/api/oauth/token",true);
         
@@ -233,9 +229,9 @@ app.get("/welcome",function(req,res){
         xhttp.send("client_id=x0nfyfunXcNTKHo_&client_secret=m9Ak2md0~AgjfXjCvb4k4~TpINkvOxtW&grant_type=authorization_code&code="+authcode+"&redirect_uri=http%3A%2F%2Flocalhost%3A1270%2Fwelcome")
         xhttp.onreadystatechange = function(){
             if(this.readyState==4 && this.status==200){
-                console.log(this.responseText);
+
                 dauthaccesstoken = JSON.parse(this.responseText);
-                console.log(dauthaccesstoken.access_token);
+
                 resolve("ok");
             }
         }}).then(function(){
@@ -243,22 +239,22 @@ app.get("/welcome",function(req,res){
             return new Promise(function(resolve,reject){
         
         
-        console.log("entered");
+
         xhttp.open("POST","https://auth.delta.nitt.edu/api/resources/user",true)
         xhttp.setRequestHeader("Authorization","Bearer "+dauthaccesstoken.access_token);
         xhttp.send();
         xhttp.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
-                console.log(this.response);
+
                 tempresponse = JSON.parse(this.response);
                 var tempemail = tempresponse["email"];
-                console.log(tempemail)
+               
                 var next = 0;
                 while(tempemail[next]!="@"){
                     temproll+=tempemail[next];
                     next++;
                 }
-                console.log(temproll);
+              
                 first++;
                 resolve("ok")
             }
@@ -348,7 +344,7 @@ app.post("/welcome",function(req,res){
     
 })
 app.get("/searchresults",function(req,res){
-    console.log(searchresult);
+    
     return new Promise(function(resolve,reject){
         if(depttobefiltered==undefined && hosteltobefiltered==undefined && locationtobefiltered==undefined){
             con.query("select username from logindetails where (username like '"+searchresult+"%' || username like '%"+searchresult+"' || username like '%"+searchresult+"%') && username!='"+userdetails[1]+"'",function(err,result){
@@ -410,7 +406,7 @@ app.get("/searchresults",function(req,res){
             resolve(searchedcontacts["name"]);
         })
     }).then(function(){
-        console.log(searchedcontacts)
+       
         res.render("searchresults",{data: searchedcontacts});
         })
     
@@ -470,7 +466,7 @@ app.get("/profilepage",(req,res) => {
         })
         setTimeout(function(){
         if(profiledetails["comments"][0]!=0){
-            console.log("done");
+            
             resolve();}
         },1000);
     })}
@@ -487,10 +483,7 @@ app.post("/profilepage",function(req,res){
                 if(err){
                     return console.log(err);
                 }
-                console.log("deleted");
-                console.log(deletecom);
-                console.log(userdetails[1]);
-                console.log(profiledetails["name"]);
+                
                 resolve("ok");
             })
         }
